@@ -26,7 +26,10 @@ botones.forEach(boton => {
         segav = sega.value;
         segbv = segb.value;
         segcv = segc.value;
-        
+        if (!validarSegmentos(segav, segbv, segcv)) {
+            alert('No se puede exceder el total de 13.');
+            return;
+        }
         var cdav = cda.options[cda.selectedIndex].value;
         var cdbv = cdb.options[cdb.selectedIndex].value;
         var cdcv = cdc.options[cdc.selectedIndex].value;
@@ -44,10 +47,6 @@ botones.forEach(boton => {
         totalMbpsValue = tasaMbpsa + tasaMbpsb + tasaMbpsc;
 
         if (boton.id === "calcular") {
-            if (!validarSegmentos(segav, segbv, segcv)) {
-            alert('No se puede exceder el total de 13.');
-            return;
-        }
             pantalla1.textContent = tasaKbpsa.toFixed(3);
             pantalla3.textContent = tasaKbpsb.toFixed(3);
             pantalla5.textContent = tasaKbpsc.toFixed(3);
@@ -78,6 +77,6 @@ function calculateKbps(seg, cdConv, mod, guarda) {
 }
 
 function validarSegmentos(segav, segbv, segcv) {
-    return (segav + segbv + segcv) <= 14;
+    return (Number(segav + segbv + segcv)) <= 13;
 }
 
