@@ -3,8 +3,6 @@ body {
 }
 
 .calculadora {
-    min-height: 100vh;
-    background-color: #090c31;
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
