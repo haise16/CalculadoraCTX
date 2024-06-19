@@ -26,6 +26,12 @@ botones.forEach(boton => {
         segav = sega.value;
         segbv = segb.value;
         segcv = segc.value;
+
+        if (!validarSegmentos(segav, segbv, segcv)) {
+            alert('No se puede exceder el total de 13.');
+            return;
+        }
+        
         var cdav = cda.options[cda.selectedIndex].value;
         var cdbv = cdb.options[cdb.selectedIndex].value;
         var cdcv = cdc.options[cdc.selectedIndex].value;
@@ -72,4 +78,7 @@ function calculateKbps(seg, cdConv, mod, guarda) {
     return rslt;
 }
 
+function validarSegmentos(segav, segbv, segcv) {
+    return (segav + segbv + segcv) <= 13;
+}
 
