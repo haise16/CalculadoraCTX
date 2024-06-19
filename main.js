@@ -79,6 +79,6 @@ function calculateKbps(seg, cdConv, mod, guarda) {
 }
 
 function validarSegmentos(segav, segbv, segcv) {
-    return (segav + segbv + segcv) <= 13;
+    return (segav + segbv + segcv) <= 14;
 }
 
